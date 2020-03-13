@@ -1,0 +1,453 @@
+{
+  "v": 1,
+  "id": "534a4c74-b546-4a51-a321-549e91e5d61c",
+  "rev": 1,
+  "name": "Cisco Stealthwatch Dashboard",
+  "summary": "Cisco Stealthwatch simple example dashboard",
+  "description": "",
+  "vendor": "Ville Leinonen",
+  "url": "https://github.com/hrleinonen/graylog-stealthwatch",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "2"
+      },
+      "id": "2e2b8fc9-eb22-4844-bc7a-eec8551b8919",
+      "data": {
+        "summary": {
+          "@type": "string",
+          "@value": "Simple example dashboard for stealthwatch."
+        },
+        "search": {
+          "queries": [
+            {
+              "id": "8c7a783b-7900-4c8a-98f3-a0f53d563d8d",
+              "timerange": {
+                "type": "relative",
+                "range": 300
+              },
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "range": 28800
+                  },
+                  "streams": [],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "SRC",
+                      "limit": 15
+                    },
+                    {
+                      "type": "values",
+                      "field": "DST",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "d2241af2-68a1-4f43-99dd-870cd89715d2",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "range": 28800
+                  },
+                  "streams": [],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "CAT",
+                      "limit": 15
+                    },
+                    {
+                      "type": "values",
+                      "field": "ALARMSEV",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "fc759c3a-c678-427b-a356-50cf2fa36a34",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "DOMAIN:PUT-MY-OWN-DOMAIN-HERE"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "range": 28800
+                  },
+                  "streams": [],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "DST_country_code",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "c494228c-813e-4e33-bd38-f958c5618b5f",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "range": 28800
+                  },
+                  "streams": [],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "ALARMSEV",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "88c75f0b-8ae0-4a9d-b47b-d5a9d6d03381",
+                  "column_groups": [],
+                  "sort": []
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "requires": {},
+          "owner": "admin",
+          "created_at": "2020-03-13T06:18:57.471Z"
+        },
+        "created_at": "2020-03-11T06:36:01.336Z",
+        "requires": {},
+        "state": {
+          "8c7a783b-7900-4c8a-98f3-a0f53d563d8d": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "widget": {
+                "1c0e55ef-c5c4-4c88-abb3-f1b049bce7d2": "STW Alarm Severity",
+                "ad84c6ff-01a0-486e-a5ce-9dcd2d24fdf0": "STW Alarm Categories",
+                "c78ff348-636f-4088-8e14-975c09efde57": "Messages for DST_country_code:SE",
+                "32bebf9e-10e4-45da-8236-9437a1711e8c": "STW Alarm Severity (copy) (copy)",
+                "755043a2-4a10-42c6-9726-aa59fa049128": "Messages for ALARMSEV:Major",
+                "fc88d20e-93b9-4474-b2d6-09a77b07fe0d": "STW Alarm Severity (copy)",
+                "633b4418-8c4a-4868-b998-3a5c1cba4f38": "STW Indi Alarm Severity",
+                "7d8146ef-41f7-40e6-aaf9-632792242871": "Messages for CAT:\"Watch Port Active\"",
+                "87e5a822-9903-4163-9463-ad03cf0777fe": "STW Alarm Category",
+                "ba551405-267a-47c3-8fd4-21e3a7ae8756": "DST country code",
+                "aae9adf2-a0d6-4015-877c-63006e9dd0ca": "STW Alarm Severity (copy)",
+                "fc4d6202-68e3-4ce5-8a0d-1b9465ad64a1": "Alarm SRC > DST pairs",
+                "47cfddd3-c2b2-4f33-9880-eb94ca6a4b20": "Messages for CAT:\"Suspect Long Flow\" AND ALARMSEV:Minor"
+              },
+              "tab": {
+                "title": "STW Alarms"
+              }
+            },
+            "widgets": [
+              {
+                "id": "633b4418-8c4a-4868-b998-3a5c1cba4f38",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "range": 28800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "CAT",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    },
+                    {
+                      "field": "ALARMSEV",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "ba551405-267a-47c3-8fd4-21e3a7ae8756",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "range": 28800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "DOMAIN:PUT-MY-OWN-DOMAIN-HERE"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "DST_country_code",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "fc4d6202-68e3-4ce5-8a0d-1b9465ad64a1",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "range": 28800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "SRC",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    },
+                    {
+                      "field": "DST",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "1c0e55ef-c5c4-4c88-abb3-f1b049bce7d2",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "range": 28800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "ALARMSEV",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              }
+            ],
+            "widget_mapping": {
+              "633b4418-8c4a-4868-b998-3a5c1cba4f38": [
+                "fc759c3a-c678-427b-a356-50cf2fa36a34"
+              ],
+              "ba551405-267a-47c3-8fd4-21e3a7ae8756": [
+                "c494228c-813e-4e33-bd38-f958c5618b5f"
+              ],
+              "fc4d6202-68e3-4ce5-8a0d-1b9465ad64a1": [
+                "d2241af2-68a1-4f43-99dd-870cd89715d2"
+              ],
+              "1c0e55ef-c5c4-4c88-abb3-f1b049bce7d2": [
+                "88c75f0b-8ae0-4a9d-b47b-d5a9d6d03381"
+              ]
+            },
+            "positions": {
+              "633b4418-8c4a-4868-b998-3a5c1cba4f38": {
+                "col": 5,
+                "row": 6,
+                "height": 4,
+                "width": 4
+              },
+              "ba551405-267a-47c3-8fd4-21e3a7ae8756": {
+                "col": 9,
+                "row": 6,
+                "height": 4,
+                "width": 4
+              },
+              "fc4d6202-68e3-4ce5-8a0d-1b9465ad64a1": {
+                "col": 1,
+                "row": 9,
+                "height": 4,
+                "width": 4
+              },
+              "1c0e55ef-c5c4-4c88-abb3-f1b049bce7d2": {
+                "col": 1,
+                "row": 6,
+                "height": 3,
+                "width": 4
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          }
+        },
+        "properties": [],
+        "owner": "admin",
+        "title": {
+          "@type": "string",
+          "@value": "Stealthwatch"
+        },
+        "type": "DASHBOARD",
+        "description": {
+          "@type": "string",
+          "@value": "Simple example dashboard for stealthwatch."
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.2.3+a9c061c"
+        }
+      ]
+    }
+  ]
+}
